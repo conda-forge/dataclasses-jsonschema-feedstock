@@ -34,7 +34,7 @@ test:
     - dataclasses_jsonschema
   commands:
     - pip check
-    - pytest tests -vv --cov dataclasses_jsonschema --cov-report=term-missing:skip-covered --cov-fail-under=92 --no-cov-on-fail
+    - pytest tests -vv --cov dataclasses_jsonschema --cov-report=term-missing:skip-covered --cov-fail-under=91 --no-cov-on-fail
   requires:
     - apispec
     - apispec-webframeworks
