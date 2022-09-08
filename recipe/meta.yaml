@@ -1,4 +1,4 @@
-{% set version = "2.15.1" %}
+{% set version = "2.15.3" %}
 
 package:
   name: dataclasses-jsonschema
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/dataclasses-jsonschema/dataclasses-jsonschema-{{ version }}.tar.gz
-  sha256: e3726a76b3d24b6c1f2198982be9278c14fdec84b8652294037558403b0aa5bb
+  sha256: 607b86432a45d9e0b4170605284132e1aac76e7a92f518989141ab4524549058
 
 build:
   noarch: python
@@ -34,7 +34,7 @@ test:
     - dataclasses_jsonschema
   commands:
     - pip check
-    - pytest tests -vv --cov dataclasses_jsonschema --cov-report=term-missing:skip-covered --cov-fail-under=92 --no-cov-on-fail
+    - pytest tests -vv --cov dataclasses_jsonschema --cov-report=term-missing:skip-covered --cov-fail-under=91 --no-cov-on-fail
   requires:
     - apispec
     - apispec-webframeworks
