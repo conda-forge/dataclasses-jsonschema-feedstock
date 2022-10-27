@@ -1,4 +1,4 @@
-{% set version = "2.15.3" %}
+{% set version = "2.16.0" %}
 
 package:
   name: dataclasses-jsonschema
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/dataclasses-jsonschema/dataclasses-jsonschema-{{ version }}.tar.gz
-  sha256: 607b86432a45d9e0b4170605284132e1aac76e7a92f518989141ab4524549058
+  sha256: effb0c73db30a537a962da75c4f35b94a5b1b7c1b17806b1ef74aed8e0aa2768
 
 build:
   noarch: python
