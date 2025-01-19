@@ -9,17 +9,18 @@ source:
   sha256: effb0c73db30a537a962da75c4f35b94a5b1b7c1b17806b1ef74aed8e0aa2768
 
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
   number: 1
+  noarch: python
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
 
 requirements:
   host:
     - pip
     - pytest-runner
-    # TODO: remove pin after https://github.com/s-knibbs/dataclasses-jsonschema/issues/181
     - python {{ python_min }}
     - setuptools-scm
+    - setuptools
   run:
     - dataclasses
     - jsonschema
@@ -34,7 +35,8 @@ test:
     - dataclasses_jsonschema
   commands:
     - pip check
-    - pytest tests -vv --cov dataclasses_jsonschema --cov-report=term-missing:skip-covered --cov-fail-under=91 --no-cov-on-fail
+    - coverage run --source=dataclasses_jsonschema --branch -m pytest tests -vv --tb=long --color=yes
+    - coverage report --show-missing --skip-covered --fail-under=91
   requires:
     - apispec
     - apispec-webframeworks
